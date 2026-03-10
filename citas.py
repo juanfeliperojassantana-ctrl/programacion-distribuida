@@ -32,7 +32,7 @@ async def crear_cita(nombre_doctor: str, nombre_paciente: str): # Parametro reci
     
     cita = {
         "id" : len(citas) + 1, # Generacion de ID
-        "doctor" : nombre_medico, # Asigna nombre del doctor
+        "doctor" : nombre_doctor, # Asigna nombre del doctor
         "paciente" : nombre_paciente, #Nombre de paciente
         "estado" : "activa" # Estado inicial de la cita
 
