@@ -20,7 +20,7 @@ def home():
 
 # CREAR cita
 @app.post("/citas") # Decorador para metodo POST
-async def crear_cita(nombre_doctor: str, nombre_paciente: str): # Parametro recibido por query
+async def crear_cita(nombre_medico: str, nombre_paciente: str): # Parametro recibido por query
 
     if nombre_doctor == "":
         raise HTTPException(status_code=400, detail="El nombre del doctor no puede estar vacio") # error HTTP
@@ -103,7 +103,7 @@ def actualizar_cita(cita_id : int, nombre_paciente : str, nombre_medico : str): 
     
     for cita in citas:  
         if cita["id"] == cita_id:
-            cita["doctor"] = nombre_doctor # Actualiza el nombre_doctor
+            cita["medico"] = nombre_medico # Actualiza el nombre_doctor
             cita["paciente"] = nombre_paciente # Actualiza el nombre_paciente
             return cita # Devuelve cita actualizado
     
